@@ -93,7 +93,7 @@ def main(page: ft.Page):
         estado["actual"] = "final_bueno"
         texto.value = "Eso es todo mi buen 🔥🔥🔥, te ganaste 2 pesos."
         imagen.src = "feliz.png"
-        page.bgcolor = ft.Colors.GREEN_50
+        page.bgcolor = ft.Colors.GREEN_200
         btn_si.visible = False
         btn_no.visible = False
         page.update()
@@ -102,7 +102,7 @@ def main(page: ft.Page):
         estado["actual"] = "final_medio"
         texto.value = "😑 Te la paso por esta vez..."
         imagen.src = "neutral.png"
-        page.bgcolor = ft.Colors.AMBER_50
+        page.bgcolor = ft.Colors.RED_50
         btn_si.visible = False
         btn_no.visible = False
         page.update()
