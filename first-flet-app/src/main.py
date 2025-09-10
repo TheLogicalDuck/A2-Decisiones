@@ -125,7 +125,7 @@ def main(page: ft.Page):
         elif estado["actual"] == "p3_sin_dulce": final_medio()
         elif estado["actual"] == "p4_bolillo": p5_cuernillo()
         elif estado["actual"] == "p4_no_bolillo": p5_leche()
-        elif estado["actual"] == "p5_ate": p6_panaderia()
+        elif estado["actual"] == "p5_cuernillo": p6_panaderia()
         elif estado["actual"] == "p5_leche": p6_mermelada()
         elif estado["actual"] == "p6_panaderia": final_bueno()
         elif estado["actual"] == "p6_mermelada": final_bueno()
@@ -138,10 +138,11 @@ def main(page: ft.Page):
         elif estado["actual"] == "p3_sin_dulce": final_medio()
         elif estado["actual"] == "p4_bolillo": final_medio()
         elif estado["actual"] == "p4_no_bolillo": final_medio()
-        elif estado["actual"] == "p5_ate": final_medio()
+        elif estado["actual"] == "p5_cuernillo": final_medio()
         elif estado["actual"] == "p5_leche": final_medio()
         elif estado["actual"] == "p6_panaderia": final_bueno()
         elif estado["actual"] == "p6_mermelada": final_medio()
+
 
     def on_reset(e): mostrar_inicio()
 
