@@ -4,23 +4,36 @@ def main(page: ft.Page):
     page.title = "El panadero con el pan 👀👀"
     page.window_width = 420
     page.window_height = 720
+    page.bgcolor = "#FFF8E7"
 
     estado = {"actual": "inicio"}
 
-    # Widgets principales
-    titulo = ft.Text("Preguntas bien pasadas de rosca", size=24, weight="bold")
-    texto  = ft.Text("", size=18, text_align="center")
+    # Widgets o como se les llame
+    titulo = ft.Text(
+        "Preguntas bien pasadas de rosca", 
+        size=24, 
+        weight="bold", 
+        color="#8B4513",  # Marrón (PUEBLO MARRÓN REFERENCIA)
+        text_align="center"
+    )
+
+    texto = ft.Text("", size=18, text_align="center")
     imagen = ft.Image(src="", width=280, height=180, fit=ft.ImageFit.CONTAIN, visible=False)
 
-    btn_si    = ft.ElevatedButton("Sí")
-    btn_no    = ft.ElevatedButton("No")
-    btn_reset = ft.TextButton("Reiniciar", icon=ft.Icons.REFRESH)
-    botones   = ft.Row([btn_si, btn_no], alignment=ft.MainAxisAlignment.CENTER, spacing=20)
+    btn_si = ft.ElevatedButton("Sí", bgcolor="#D2691E", color="white", width=120)
+    btn_no = ft.ElevatedButton("No", bgcolor="#8B0000", color="white", width=120)
+    btn_reset = ft.TextButton("Reiniciar", icon=ft.Icons.REFRESH, style=ft.ButtonStyle(color="#8B4513"))
+
+    botones = ft.Row(
+        [btn_si, btn_no],
+        alignment=ft.MainAxisAlignment.CENTER,
+        spacing=20
+    )
 
     # --- Funciones de flujo ---
     def mostrar_inicio():
         estado["actual"] = "inicio"
-        page.bgcolor = None
+        page.bgcolor = "#FFF8E7"
         texto.value = "😏 ¿Te gusta el pan?"
         imagen.src = "pan1.png"
         imagen.visible = True
@@ -28,7 +41,8 @@ def main(page: ft.Page):
         btn_no.visible = True
         page.update()
 
-    # Preguntas (10 niveles)
+    # Flujooooo
+
     def p2_si():
         estado["actual"] = "p2_si"
         texto.value = "🥐 ¿Prefieres una concha que un bolillo?"
@@ -88,12 +102,12 @@ def main(page: ft.Page):
         imagen.src = "oomagad.png"
         page.update()
 
-    # --- Finales ---
+    # Finales
     def final_bueno():
         estado["actual"] = "final_bueno"
         texto.value = "Eso es todo mi buen 🔥🔥🔥, te ganaste un pan."
         imagen.src = "pansupremo.png"
-        page.bgcolor = ft.Colors.GREEN_200
+        page.bgcolor = "#C8E6C9"
         btn_si.visible = False
         btn_no.visible = False
         page.update()
@@ -102,7 +116,7 @@ def main(page: ft.Page):
         estado["actual"] = "final_medio"
         texto.value = "😑 Te la paso por esta vez..."
         imagen.src = "neutral.png"
-        page.bgcolor = ft.Colors.RED_50
+        page.bgcolor = "#FFF3E0"
         btn_si.visible = False
         btn_no.visible = False
         page.update()
@@ -111,12 +125,12 @@ def main(page: ft.Page):
         estado["actual"] = "final_malo"
         texto.value = "😡 Tons pelate de aca carnal, no me hables"
         imagen.src = "angri.png"
-        page.bgcolor = ft.Colors.RED_50
+        page.bgcolor = "#FFCDD2"
         btn_si.visible = False
         btn_no.visible = False
         page.update()
 
-    # --- LISTA DE TOOODAS LAS DECISIONES ---
+    # Decisiones
     def on_si(e):
         if estado["actual"] == "inicio": p2_si()
         elif estado["actual"] == "p2_si": p3_dulce()
@@ -143,23 +157,27 @@ def main(page: ft.Page):
         elif estado["actual"] == "p6_panaderia": final_bueno()
         elif estado["actual"] == "p6_mermelada": final_medio()
 
-
     def on_reset(e): mostrar_inicio()
 
     btn_si.on_click = on_si
     btn_no.on_click = on_no
     btn_reset.on_click = on_reset
 
-    # Layout principal
+    # Laiaut (layout)
     page.add(
-        ft.Column(
-            [titulo, texto, imagen, botones, btn_reset],
-            alignment=ft.MainAxisAlignment.START,
-            horizontal_alignment=ft.CrossAxisAlignment.CENTER,
-            spacing=16,
-            expand=True,
+        ft.Container(
+            content=ft.Column(
+                [titulo, texto, imagen, botones, btn_reset],
+                alignment=ft.MainAxisAlignment.CENTER, #lo centré para que esté mas bonito
+                horizontal_alignment=ft.CrossAxisAlignment.CENTER,
+                spacing=20,
+                expand=True
+            ),
+            alignment=ft.alignment.center,
+            expand=True
         )
     )
+
     mostrar_inicio()
 
 ft.app(target=main)
