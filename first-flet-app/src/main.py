@@ -116,7 +116,7 @@ def main(page: ft.Page):
         btn_no.visible = False
         page.update()
 
-    # --- Lógica de decisiones ---
+    # --- LISTA DE TOOODAS LAS DECISIONES ---
     def on_si(e):
         if estado["actual"] == "inicio": p2_si()
         elif estado["actual"] == "p2_si": p3_dulce()
