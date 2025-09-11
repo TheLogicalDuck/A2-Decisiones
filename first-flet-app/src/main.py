@@ -73,7 +73,7 @@ def main(page: ft.Page):
     def p5_leche():
         estado["actual"] = "p5_leche"
         texto.value = "🍯 ¿Te gusta el bolillo con mermelada??"
-        imagen.src = "pan_mermelada.png"
+        imagen.src = "mermelada.png"
         page.update()
 
     def p6_panaderia():
@@ -85,7 +85,7 @@ def main(page: ft.Page):
     def p6_mermelada():
         estado["actual"] = "p6_mermelada"
         texto.value = "¿Te lo comes entero?"
-        imagen.src = "pann.png"
+        imagen.src = "oomagad.png"
         page.update()
 
     # --- Finales ---
@@ -109,8 +109,8 @@ def main(page: ft.Page):
 
     def final_malo():
         estado["actual"] = "final_malo"
-        texto.value = "😢 Tons pelate de aca carnal, no me hables"
-        imagen.src = "triste.png"
+        texto.value = "😡 Tons pelate de aca carnal, no me hables"
+        imagen.src = "angri.png"
         page.bgcolor = ft.Colors.RED_50
         btn_si.visible = False
         btn_no.visible = False
