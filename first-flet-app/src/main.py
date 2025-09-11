@@ -91,8 +91,8 @@ def main(page: ft.Page):
     # --- Finales ---
     def final_bueno():
         estado["actual"] = "final_bueno"
-        texto.value = "Eso es todo mi buen 🔥🔥🔥, te ganaste 2 pesos."
-        imagen.src = "feliz.png"
+        texto.value = "Eso es todo mi buen 🔥🔥🔥, te ganaste un pan."
+        imagen.src = "pansupremo.png"
         page.bgcolor = ft.Colors.GREEN_200
         btn_si.visible = False
         btn_no.visible = False
