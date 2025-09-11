@@ -72,7 +72,7 @@ def main(page: ft.Page):
 
     def p5_leche():
         estado["actual"] = "p5_leche"
-        texto.value = "🍯 ¿Te gusta el bolillo con mermelada??"
+        texto.value = "🍯 ¿Te gusta el bolillo con mermelada?? (ya sé que la imágen no es un bolillo)"
         imagen.src = "mermelada.png"
         page.update()
 
