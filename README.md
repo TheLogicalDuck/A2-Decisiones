@@ -38,5 +38,4 @@ Ejemplo: C:\Users\ProgIV-28\Documents\GitHub\A2-Decisiones\first-flet-app\src
 -Ahora ejecuta el comando "flet run"
 -Eso es todo 🔥
 
-
 (aca van a ir las capturas)
