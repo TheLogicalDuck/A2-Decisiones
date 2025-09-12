@@ -2,6 +2,7 @@
 App en flet para tomar decisiones con temática de panes, dónde le usuario elige si le gusta o no el pan.
 
 DIAGRAMA DE FLUJO DE LAS DECISIONES:
+<img width="1826" height="907" alt="diagram-export-11-9-2025-8_41_19-p m" src="https://github.com/user-attachments/assets/1495309b-6a03-45bc-a5f6-44494cb41843" />
 
 
 *Requisitos de uso:*
